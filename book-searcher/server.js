@@ -25,7 +25,7 @@ var db = require("./models");
 // Connect to the Mongo DB
 mongoose.connect("mongodb://localhost/GoogleBooks", { useNewUrlParser: true });
 
-// Define API routes here
+//API Routes
 
 // Send every other request to the React app
 // Define any API routes before this runs

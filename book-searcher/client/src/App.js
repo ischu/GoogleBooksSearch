@@ -1,16 +1,18 @@
 import React, { Component } from "react";
+import 'bootstrap/dist/css/bootstrap.css';
+import './index.css';
+import Hero from './components/shared/Hero';
+import NavBar from './components/shared/Navbar';
+import Container from './components/shared/Container';
 import "./App.css";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Container>
+        Hello
+        </Container>
       </div>
     );
   }
