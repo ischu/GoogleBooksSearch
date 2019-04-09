@@ -10,6 +10,20 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+// Mongo Database stuff
+// Use morgan logger for logging requests
+app.use(logger("dev"));
+// Parse request body as JSON
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+// Make public a static folder
+app.use(express.static("public"));
+
+var db = require("./models");
+
+
+// Connect to the Mongo DB
+mongoose.connect("mongodb://localhost/GoogleBooks", { useNewUrlParser: true });
 
 // Define API routes here
 
