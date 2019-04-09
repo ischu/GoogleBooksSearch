@@ -1,7 +1,14 @@
 const express = require("express");
-const path = require("path");
-const PORT = process.env.PORT || 3001;
+const logger = require("morgan");
+const mongoose = require("mongoose");
+const fs = require("fs");
 const app = express();
+
+// Server & Port
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/GoogleBooks";
+const PORT = process.env.PORT || 3000;
+// Connect to the Mongo DB
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -20,10 +27,6 @@ app.use(express.json());
 app.use(express.static("public"));
 
 var db = require("./models");
-
-
-// Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/GoogleBooks", { useNewUrlParser: true });
 
 //API Routes
 
